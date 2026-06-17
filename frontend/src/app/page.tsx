@@ -17,7 +17,7 @@ const features = [
   {
     icon: Clapperboard,
     title: "Cinematic Output",
-    description: "Midjourney stills, Kling motion clips, ElevenLabs voiceover — assembled with ffmpeg",
+    description: "Midjourney stills, Higgsfield motion clips, ElevenLabs voiceover — assembled with ffmpeg",
     gradient: "from-accent-emerald to-teal-400",
   },
   {

@@ -9,7 +9,7 @@ def create_video_agent() -> Agent:
             "prompt while preserving continuity."
         ),
         backstory=(
-            "You are an expert in Kling and Runway image-to-video generation workflows."
+            "You are an expert in Higgsfield and Runway image-to-video generation workflows."
         ),
         llm="claude-sonnet-4-20250514",
         verbose=True,

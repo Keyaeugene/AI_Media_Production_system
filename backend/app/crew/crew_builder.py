@@ -13,7 +13,7 @@ from app.models.log import LogEntry
 from app.services.claude_service import complete
 from app.services.elevenlabs_service import generate_voiceover
 from app.services.ffmpeg_service import apply_color_grade, assemble_video
-from app.services.kling_service import KlingService
+from app.services.higgsfield_service import HiggsfieldService
 from app.services.midjourney_service import MidjourneyService
 from app.services.storage_service import StorageService
 from app.utils.prompts import (
@@ -140,7 +140,7 @@ def execute_pipeline(job_id: str, job_input: dict) -> dict:
 
     storage = StorageService()
     midjourney = MidjourneyService()
-    kling = KlingService()
+    higgsfield = HiggsfieldService()
 
     prompt_lines = _extract_numbered_lines(prompts)
     image_urls: list[str] = []
@@ -165,9 +165,9 @@ def execute_pipeline(job_id: str, job_input: dict) -> dict:
             session.commit()
 
         _set_job_progress(job_id, current_step="clips")
-        log_to_db_and_ws(job_id, "VideoAgent", f"Generating beat {index} clip in Kling.")
-        generation_id = kling.submit_image_to_video(image_url=image_url, prompt=prompt, duration=4)
-        video_result = kling.poll_video(generation_id)
+        log_to_db_and_ws(job_id, "VideoAgent", f"Generating beat {index} clip in Higgsfield.")
+        generation_id = higgsfield.submit_image_to_video(image_url=image_url, prompt=prompt, duration=4)
+        video_result = higgsfield.poll_video(generation_id)
         clip_url = video_result.get("video_url", "")
         with get_session_sync() as session:
             session.add(

@@ -5,7 +5,7 @@ Autonomous multi-agent pipeline for generating vertical cinematic videos from a 
 ## Stack
 - Frontend: Next.js 15 + TypeScript + Tailwind
 - Backend: FastAPI + SQLModel + CrewAI + Celery + Redis
-- Media: Midjourney (ImagineAPI-style abstraction), Kling, ElevenLabs, ffmpeg
+- Media: Midjourney (ImagineAPI-style abstraction), Higgsfield, ElevenLabs, ffmpeg
 - Storage: AWS S3 abstraction
 
 ## Repository Layout
@@ -36,7 +36,7 @@ Autonomous multi-agent pipeline for generating vertical cinematic videos from a 
    - script generation
    - prompt generation and up to 3 reviewer rounds
    - Midjourney images
-   - Kling clips
+   - Higgsfield clips
    - ElevenLabs voiceover
    - ffmpeg assembly + color grade
 3. Assets and logs are persisted and streamed to WebSocket clients.

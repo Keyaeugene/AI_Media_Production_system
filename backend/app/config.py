@@ -8,8 +8,8 @@ class Settings(BaseSettings):
     ANTHROPIC_API_KEY: str
     MIDJOURNEY_API_KEY: str
     MIDJOURNEY_API_URL: str
-    KLING_API_KEY: str
-    KLING_API_URL: str
+    HIGGSFIELD_API_KEY: str
+    HIGGSFIELD_API_URL: str
     RUNWAY_API_KEY: str = ""
     RUNWAY_API_URL: str = ""
     ELEVENLABS_API_KEY: str
